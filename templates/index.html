@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/static/cs/style.css">
+
 </head>
 
 <body>
@@ -12,22 +13,25 @@
         <div class="row">
             <div class="col-lg-8 col-sm-12 col-11 main-section">
                 <img class="mx-auto d-block col-lg-8 col-sm-12 col-11 " src="/static/images/1.png">
-                <p class="text-center font-weight-bold text-muted">{{message}}</p>
-
+                </br>
+                <p class="text-center font-weight-bold text-muted">Please Upload Your Satellite Images, Max 10 Images
+                </p>
+                </br>
                 <form id="upload" action="/predict" method="POST" enctype="multipart/form-data">
                     <input type="file" name="uploadFile" accept="image/*" required multiple="multiple" />
-                    </br></br>
                     <button class="btn btn-primary" type="submit" value="Submit">Submit</button>
                 </form>
 
             </div>
+            <div class="cont col-lg-8 col-sm-12 col-11 main-section" id="cont">
+
+            </div>
         </div>
+
     </div>
 
     <!-- div container to display output  | WTF -->
-    <div class="cont" id = "cont">
-        
-    </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -40,6 +44,7 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <script src="static/js/main.js"></script>
+
 </body>
 
 </html>
