@@ -32,7 +32,7 @@ def predict():
     pred = {}
     # if there is more than 10 uploaded images don't continue and return with this message ,.... مش وكالة من غير بواب هي
     if len(files) > 10:
-        return redirect('/', message="Home")
+        return redirect('/')
 
     for file in files:
         if not file.filename.endswith(ALLOWED_EXTENSIONS):
@@ -40,7 +40,7 @@ def predict():
         img = Image.open(file)
         img = img.resize((256, 256))
         buffered = BytesIO()
-        img.save(buffered, format="JPEG")
+        img.save(buffered, format="PNG")
         pim = base64.b64encode(buffered.getvalue())
         img = np.asarray(img, dtype=np.float32)
         img = img / 255
