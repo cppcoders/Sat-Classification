@@ -8,7 +8,9 @@
 }
 
 
-.fileinput-remove,
-.fileinput-upload{
-	display: none;
+.cont{
+	display: flex ;
+	justify-content: space-evenly ;
+	flex-wrap: wrap ;
+	flex-wrap: wrap; 
 }

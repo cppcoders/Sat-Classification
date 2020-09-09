@@ -13,11 +13,11 @@
             <div class="col-lg-8 col-sm-12 col-11 main-section">
                 <img class="mx-auto d-block col-lg-8 col-sm-12 col-11 " src="/static/images/1.png">
                 <p class="text-center font-weight-bold text-muted">{{message}}</p>
-                
-                <form id = "upload" action="/predict" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="uploadFile" accept="image/*" required  multiple="multiple" />
+
+                <form id="upload" action="/predict" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="uploadFile" accept="image/*" required multiple="multiple" />
                     </br></br>
-                    <button class="btn btn-primary" type = "submit" value = "Submit" >Submit</button>
+                    <button class="btn btn-primary" type="submit" value="Submit">Submit</button>
                 </form>
 
             </div>
@@ -25,8 +25,8 @@
     </div>
 
     <!-- div container to display output  | WTF -->
-    <div class = "container">
-        <img src = {{name}} width = 1000px height = 500px alt = "">
+    <div class="cont" id = "cont">
+        
     </div>
 
 
@@ -39,7 +39,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-    <script src="/static/js/main.js"></script>
+    <script src="static/js/main.js"></script>
 </body>
 
 </html>
