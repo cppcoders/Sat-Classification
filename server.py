@@ -17,12 +17,12 @@ message = "Home"
 
 @app.route("/")
 def index():
-    return render_template('index.html', message=message)
+    return render_template('index.html', message="Home")
 
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 ALLOWED_EXTENSIONS = (".jpg", ".jpeg", ".png")
-model = load_model("static/model/model.hdf5")
+model = load_model("static/model.hdf5")
 
 
 @app.route('/predict', methods=['GET', 'POST'])
