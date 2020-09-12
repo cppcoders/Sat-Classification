@@ -41,7 +41,7 @@ def predict():
         pim = base64.b64encode(buffered.getvalue())
         j = {"img": str(pim)}
         r = requests.post(url, json=json.dumps(j)).json()
-        pred[str(pim)] = r["pred"]
+        pred[str(pim)[2:-1]] = r["pred"]
     return render_template('model.html', message=pred)
 
 
