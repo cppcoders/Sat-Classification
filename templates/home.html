@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+            margin: 0px;
+            background-color: #D4D4D4;
+            align-items: center;
+            box-sizing: border-box;
+            width: 100%;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        .nav {
+            background-color: #fff;
+            width: 100%;
+            padding: 20px;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .header {
+            color: #fff;
+            background: url('../static/cover.png');
+            background-size: cover;
+            text-align: center;
+            padding: 350px 100px 310px 100px;
+            margin-top: 74.4px;
+            background-color: #fff;
+            width: 100%;
+            box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .19), 0 12px 15px 0 rgba(0, 0, 0, .24);
+            z-index: 2;
+        }
+
+
+        .header_text {
+            font-size: 50px;
+            margin-bottom: 50px;
+        }
+
+        .about_project {
+            background-color: #fff;
+            width: 100%;
+            padding-bottom: 100px;
+
+        }
+
+        .about_model {
+            background-color: #f2f2f2;
+            width: 100%;
+        }
+
+        .about_project h1,
+        .about_model h1 {
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .about_project_cont,
+        .about_model_cont {
+            display: flex;
+            justify-content: space-around;
+            padding: 100px 100px 100px 100px;
+            max-width: 100%;
+        }
+
+        .about_project_left,
+        .about_model_left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 0px 0px 0px;
+            font-size: 30px;
+        }
+
+        .about_project_left button,
+        .about_model_left button {
+            margin-top: 10px;
+        }
+
+        .about_project_right,
+        .about_model_right {
+            padding-top: 50px;
+        }
+
+        .about_project_right iframe,
+        .about_model_right img {
+            width: 90%;
+        }
+
+        .main-section {
+            text-align: center;
+            margin: 0px auto;
+            padding: 100px;
+            margin-top: 100px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .19), 0 12px 15px 0 rgba(0, 0, 0, .24);
+        }
+
+
+        .cont {
+
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 100px;
+            margin-top: 30px;
+            padding: 0px
+        }
+
+        .card-text {
+            font-weight: 900;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #2e2e2e;
+            text-align: center;
+            padding: 50px;
+            color: #fff;
+        }
+
+        .footer p {
+            margin: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- --------------------------------------------------------------------------- header start ----------------------------------------------------------->
+    <nav class="nav nav-pills nav-justified">
+        <a class="nav-item nav-link active" href="/">Home</a>
+        <a class="nav-item nav-link" href="/model">Model</a>
+        <a class="nav-item nav-link" href="/documentation">Documentation</a>
+        <a class="nav-item nav-link" href="/user_manuals">User Manuals</a>
+        <a class="nav-item nav-link" href="/about_us">About Us</a>
+    </nav>
+
+    <div class="header">
+        <div class="header_text">
+            EGSA training program </br> project
+        </div>
+        <button class="btn btn-primary">Know more</button>
+
+    </div>
+
+    <!-- --------------------------------------------------------------------------- header end -------------------------------------------------------------->
+
+    <!-- --------------------------------------------------------------------------- about us start ----------------------------------------------------------->
+    <div class="about_project">
+        <h1>About Project</h1>
+        <div class="about_project_cont row">
+            <div class="about_project_left col-lg-6 col-sm-12">
+                <div>
+                    <p>This project is Bla Bla Bla , the instructor : El Baz Bla Bla
+                    </p>
+                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Know more</button>
+                </div>
+            </div>
+
+            <div class="about_project_right col-lg-6 col-sm-12">
+                <iframe width="560" height="515" src="https://www.youtube.com/embed/C0DPdy98e4c" frameborder="0" allow="accelerometer;
+                 autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------------------------------------------------- about us end --------------------------------------------------------->
+
+    <!-- --------------------------------------------------------------------------- about model start ----------------------------------------------------------->
+    <div class="about_model">
+        <h1>About model</h1>
+        <div class="about_model_cont row">
+
+            <div class="about_model_right col-lg-6 col-sm-12">
+                <img src="static/about_model.svg">
+            </div>
+            <div class="about_model_left col-lg-6 col-sm-12">
+                <div>
+                    <p>This model is Bla Bla Bla , acc : 98% , network model : ResNet18
+                    </p>
+                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Documentation</button>
+                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Model</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------------------------------------------------- about us start --------------------------------------------------------->
+
+
+
+    <footer class="footer">
+        <p>@ 2020 Copyrights <span>T7COMP in <a href="https://egsa.gov.eg/">EGSA</a> training program</span> </p>
+    </footer>
+
+    <script>
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

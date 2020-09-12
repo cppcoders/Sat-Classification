@@ -17,7 +17,7 @@ message = "Home"
 
 @app.route("/")
 def index():
-    return render_template('index.html', message="Home")
+    return render_template('home.html', message="Home")
 
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -32,7 +32,7 @@ def predict():
     pred = {}
     # if there is more than 10 uploaded images don't continue and return with this message ,.... مش وكالة من غير بواب هي
     if len(files) > 10:
-        return redirect('/')
+        return redirect('/model')
 
     for file in files:
         if not file.filename.endswith(ALLOWED_EXTENSIONS):
@@ -49,7 +49,25 @@ def predict():
         predict = model.predict(img)
         predict = labels[np.argmax(predict)]
         pred[pim] = predict
-    return render_template('index.html', message=pred)
+    return render_template('model.html', message=pred)
+
+
+@app.route("/model")
+def mod():
+    return render_template('model.html', message="model")
+
+@app.route("/documentation")
+def doc():
+    return render_template('documentation.html', message="doc")
+
+@app.route("/user_manuals")
+def user():
+    return render_template('user_manuals.html', message="user")
+
+@app.route("/about_us")
+def about():
+    return render_template('about_us.html', message="about")
+
 
 
 if __name__ == '__main__':
