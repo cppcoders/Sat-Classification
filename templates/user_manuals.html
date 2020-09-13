@@ -11,44 +11,32 @@
             flex-direction: column;
             padding: 0px;
             margin: 0px;
-            background-color: #D4D4D4;
-            align-items: center;
+            font-family: serif;
             box-sizing: border-box;
             width: 100%;
             font: inherit;
-            font-size: 100%;
+            font-size: 22px;
             vertical-align: baseline;
         }
-        
-        .nav{
+
+        .nav {
             background-color: #fff;
             width: 100%;
             padding: 20px;
+            box-shadow: 0 0px 30px 0 rgba(0, 0, 0, .20), 0 0px 10px 0 rgba(0, 0, 0, .20);
         }
 
-        .main-section {
-            text-align: center;
-            margin: 0px auto;
+        .content {
             padding: 100px;
-            margin-top: 100px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .19), 0 12px 15px 0 rgba(0, 0, 0, .24);
+            color: #575757;
         }
 
-
-        .cont {
-
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 100px;
-            margin-top: 30px;
-            padding: 0px
+        .content h2 {
+            margin-top: 50px;
         }
 
-        .card-text {
-            font-weight: 900;
+        hr{
+            margin: 50px 200px 50px 0px;
         }
 
         .footer {
@@ -75,11 +63,125 @@
         <a class="nav-item nav-link active" href="/user_manuals">User Manuals</a>
         <a class="nav-item nav-link" href="/about_us">About Us</a>
     </nav>
+    <div class="content">
+        <h1 class="code-line" data-line-start=0 data-line-end=1><a
+                id="Satellite_images_prediction_model_0"></a>Satellite
+            images prediction model
+        </h1>
+
+        <h2 class="code-line" data-line-start=2 data-line-end=3>
+            <a id="Intended_use_2"></a>Intended use
+        </h2>
+        <p class="has-line-data" data-line-start="3" data-line-end="4">This model takes satellite images and classify it
+            to
+            one of these classes : [Desert, Plant, Water]
+        </p>
+        <hr>
+
+        <h2 class="code-line" data-line-start=5 data-line-end=6><a id="Requirements_5"></a>Requirements</h2>
+        <p class="has-line-data" data-line-start="6" data-line-end="7">No requirements needed more than an internet
+            connection and the images you want to classify</p>
+        <ul>
+            <li class="has-line-data" data-line-start="8" data-line-end="11">examples of images:<br><br>
+            </li>
+            <img src="static/user_manuals/1.jpeg">
+            <img src="static/user_manuals/2.jpeg">
+            <img src="static/user_manuals/3.jpeg">
+        </ul>
+
+        <hr>
+
+        <h2 class="code-line" data-line-start=11 data-line-end=12><a id="Model_Accessibility_11"></a>Model Accessibility
+        </h2>
+        <p class="has-line-data" data-line-start="12" data-line-end="13">Go to <a
+                href="https://satellite-classification.herokuapp.com/model">model page</a></p>
+
+        <hr>
+        <h2 class="code-line" data-line-start=14 data-line-end=15><a id="User_interface_14"></a>User interface</h2>
+        <ul>
+            <li class="has-line-data" data-line-start="15" data-line-end="16"><b>browse button</b> : to select images
+                you want
+                to
+                upload from your device</li>
+            <li class="has-line-data" data-line-start="16" data-line-end="18"><b>submit button</b> : to submit the
+                selected
+                images
+                and upload them<br>
+            </li>
+            <img src="static/user_manuals/interface.png" style="width: 500px ; height: 400px;">
+            <li class="has-line-data" data-line-start="18" data-line-end="20"><b>display area</b> : after you click the submit button a
+                display area will apear with your images and the predicted class of each image<br><br>
+            </li>
+            <img src="static/user_manuals/interface2.png" style="width: 600px ; height: 400px;">
+
+        </ul>
+
+        <hr>
 
 
+        <h2 class="code-line" data-line-start=23 data-line-end=24><a id="How_to_use_23"></a>How to use</h2>
+        <ul>
+            <li class="has-line-data" data-line-start="24" data-line-end="25">Click the browse button and select any
+                number
+                of images with any image formats.</li>
+                <img src="static/user_manuals/hts1.png">
+                <img src="static/user_manuals/hts2.png" style="width: 500px; height:350px">
+
+            <li class="has-line-data" data-line-start="25" data-line-end="26">Click the submit button.</li>
+                <img src="static/user_manuals/hts3.png">
+            <li class="has-line-data" data-line-start="26" data-line-end="27">Wait for the model to load and display
+                your
+                images along with the class of each one in the display area.</li>
+                <img src="static/user_manuals/hts4.png">
+            <li class="has-line-data" data-line-start="27" data-line-end="28">Repeat if you want to classify new images
+                .
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2 class="code-line" data-line-start=30 data-line-end=31><a id="Tech_30"></a>Tech</h2>
+        <ul>
+            <li class="has-line-data" data-line-start="31" data-line-end="32">The model creation, training and testing
+                was
+                done on <a href="https://www.kaggle.com/">Kaggle</a></li>
+            <li class="has-line-data" data-line-start="32" data-line-end="33">The website is hosted on <a
+                    href="https://www.heroku.com/">heroku</a></li>
+            <li class="has-line-data" data-line-start="33" data-line-end="34">The model weights file is hosted on <a
+                    href="https://colab.research.google.com/">Google Colab</a></li>
+            <li class="has-line-data" data-line-start="34" data-line-end="36">The connection between heroku website and
+                Google Colab classifing model is done using <a href="https://ngrok.com/">ngrok</a></li>
+        </ul>
+
+        <hr>
+
+
+        <h2 class="code-line" data-line-start=36 data-line-end=37><a id="Model_specifications_36"></a>Model
+            specifications
+        </h2>
+        <p class="has-line-data" data-line-start="37" data-line-end="38">If you want to know all the informations about
+            the
+            model you can go to <a href="/documentation">Documentation page</a></p>
+        <ul>
+            <li class="has-line-data" data-line-start="39" data-line-end="40"><b>Model</b> : Cutomized ResNet18</li>
+            <li class="has-line-data" data-line-start="40" data-line-end="41"><b>Model accuracy</b> : 98%</li>
+            <li class="has-line-data" data-line-start="41" data-line-end="42"><b>Model training</b> : The model was trained on
+                357
+                images [around 33% in each class] with a 15% validation split and data. augmentation on training and
+                validation data.</li>
+            <li class="has-line-data" data-line-start="42" data-line-end="43"><b>Model testing</b> : The model was tested on 90
+                images [33.3% in each class].</li>
+        </ul>
+
+        <hr>
+
+        
+        <h2 class="code-line" data-line-start=45 data-line-end=46><a id="Licence_45"></a>Licence</h2>
+        <p class="has-line-data" data-line-start="46" data-line-end="47">MIT</p>
+    </div>
 
     <footer class="footer">
-        <p>@ 2020 Copyrights <span>T7COMP in <a href="https://egsa.gov.eg/">EGSA</a> training program</span> </p>
+        <p>@ 2020 Copyrights <span>T7COMP in <a href="https://egsa.gov.eg/">EgSA</a> training program</span> </p>
     </footer>
 
 

@@ -21,7 +21,6 @@ def index():
 
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-ALLOWED_EXTENSIONS = (".jpg", ".jpeg", ".png", ".PNG", ".JPG", ".JPEG")
 
 url = 'http://653a3076a612.ngrok.io/predict'
 @app.route('/predict', methods=['GET', 'POST'])
@@ -32,8 +31,6 @@ def predict():
         return redirect('/model')
 
     for file in files:
-        if not file.filename.endswith(ALLOWED_EXTENSIONS):
-            continue
         img = Image.open(file)
         img = img.resize((256, 256))
         buffered = BytesIO()
