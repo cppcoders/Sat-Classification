@@ -38,7 +38,12 @@ def predict():
         pim = base64.b64encode(buffered.getvalue())
         j = {"img": str(pim)}
         r = requests.post(url, json=json.dumps(j)).json()
-        pred[str(pim)[2:-1]] = r["pred"]
+        res = r["pred"]
+        res = res.split()
+        res[1] = float(res[1])*100.0
+        if res[1] < 85 :
+            res[0] = "What ?!!"
+        pred[str(pim)[2:-1]] = res[0]
     return render_template('model.html', message=pred)
 
 
