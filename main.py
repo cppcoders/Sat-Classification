@@ -41,7 +41,7 @@ def predict():
         res = r["pred"]
         res = res.split()
         res[1] = float(res[1])*100.0
-        if res[1] < 85 :
+        if res[1] < 95 :
             res[0] = "What ?!!"
         pred[str(pim)[2:-1]] = res[0]
     return render_template('model.html', message=pred)
