@@ -283,8 +283,7 @@
         window.onscroll = function () {
             navbar1 = document.getElementById("#nav1");
             navbar2 = document.getElementById("#nav2");
-            console.log(window.pageYOffset);
-            if (window.pageYOffset > 10) {
+            if (window.pageYOffset > 20) {
                 navbar1.classList.add("hidden");
                 navbar2.classList.remove("hidden");
             }
