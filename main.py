@@ -22,7 +22,7 @@ def index():
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-url = 'http://1ef965ff9d54.ngrok.io/predict'
+url = 'http://2e6063c8bfd6.ngrok.io/predict'
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     files = request.files.getlist('uploadFile')
