@@ -5,19 +5,49 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <style>
+        html,
         body {
-            display: flex;
-            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+
             padding: 0px;
             margin: 0px;
             background-color: #D4D4D4;
             align-items: center;
             box-sizing: border-box;
-            width: 100%;
             font: inherit;
             font-size: 100%;
             vertical-align: baseline;
+        }
+
+        .nav1 {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 20px;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .nav1 a {
+            color: #fff;
+        }
+
+        .nav1 a:hover{
+            color: rgb(230, 207, 0);
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        .show {
+            visibility: visible;
         }
 
         .nav {
@@ -29,26 +59,34 @@
             box-shadow: 0 0px 30px 0 rgba(0, 0, 0, .20), 0 0px 10px 0 rgba(0, 0, 0, .20);
         }
 
+        .sticky {
+            position: fixed;
+            top: 0;
+        }
+
         .header {
             color: #fff;
-            background: url('../static/cover.png');
+            background: url('../static/cover.jpg');
             background-size: cover;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
             text-align: center;
-            padding: 350px 100px 310px 100px;
-            margin-top: 74.4px;
-            background-color: #fff;
             width: 100%;
+            height: 100%;
             box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .19), 0 12px 15px 0 rgba(0, 0, 0, .24);
             z-index: 2;
         }
 
 
         .header_text {
+            font-family: 'Poppins', sans-serif;
             font-size: 50px;
             margin-bottom: 50px;
         }
 
         .about_project {
+            font-family: 'Poppins', sans-serif;
             background-color: #fff;
             width: 100%;
             padding-bottom: 100px;
@@ -56,6 +94,7 @@
         }
 
         .about_model {
+            font-family: 'Poppins', sans-serif;
             background-color: #f2f2f2;
             width: 100%;
         }
@@ -126,7 +165,15 @@
 
 <body>
     <!-- --------------------------------------------------------------------------- header start ----------------------------------------------------------->
-    <nav class="nav nav-pills nav-justified">
+    <nav class="nav1" id="#nav1">
+        <a class="nav-item nav-link active" href="/">Home</a>
+        <a class="nav-item nav-link" href="/model">Model</a>
+        <a class="nav-item nav-link" href="/documentation">Documentation</a>
+        <a class="nav-item nav-link" href="/user_manuals">User Manuals</a>
+        <a class="nav-item nav-link" href="/about_us">About Us</a>
+    </nav>
+
+    <nav class="nav nav-pills nav-justified hidden" id="#nav2" >
         <a class="nav-item nav-link active" href="/">Home</a>
         <a class="nav-item nav-link" href="/model">Model</a>
         <a class="nav-item nav-link" href="/documentation">Documentation</a>
@@ -136,16 +183,16 @@
 
     <div class="header">
         <div class="header_text">
-            EgSA Training Program </br> Project
+            Satellite Image Classification </br> project
         </div>
-        <button class="btn btn-primary">Know more</button>
+        <a href="#about_project"><button class="btn btn-primary">Know more</button></a>
 
     </div>
 
     <!-- --------------------------------------------------------------------------- header end -------------------------------------------------------------->
 
     <!-- --------------------------------------------------------------------------- about us start ----------------------------------------------------------->
-    <div class="about_project">
+    <div class="about_project" id="about_project">
         <h1>About Project</h1>
         <div class="about_project_cont row">
             <div class="about_project_left col-lg-6 col-sm-12">
@@ -192,6 +239,22 @@
     </footer>
 
     <script>
+
+        window.onscroll = function () {
+            navbar1 = document.getElementById("#nav1");
+            navbar2 = document.getElementById("#nav2");
+            console.log(window.pageYOffset);
+            if (window.pageYOffset > 10) {
+                navbar1.classList.add("hidden");
+                navbar2.classList.remove("hidden");
+            }
+            else if (window.pageYOffset == '0') {
+                navbar2.classList.add("hidden");
+                navbar1.classList.remove("hidden");
+            }
+        };
+
+
 
     </script>
 
