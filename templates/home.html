@@ -112,6 +112,9 @@
             padding: 100px 100px 100px 100px;
             max-width: 100%;
         }
+        .about_model_cont{
+            padding-top: 0px;
+        }
 
         .about_project_left,
         .about_model_left {
@@ -191,15 +194,16 @@
 
     <!-- --------------------------------------------------------------------------- header end -------------------------------------------------------------->
 
-    <!-- --------------------------------------------------------------------------- about us start ----------------------------------------------------------->
+    <!-- --------------------------------------------------------------------------- about project start ----------------------------------------------------------->
     <div class="about_project" id="about_project">
         <h1>About Project</h1>
         <div class="about_project_cont row">
             <div class="about_project_left col-lg-6 col-sm-12">
                 <div>
-                    <p>This project is , the instructor : Eng . Ahmed El Baz
+                    <p style="line-height: 50px;">
+                        This project is an EgSA summer 2020 training program project, tha main goal was to build a deep learning model 
+                        that takes a satellite image and classify it to <b>desert, plant or water</b>. </br>
                     </p>
-                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Know more</button>
                 </div>
             </div>
 
@@ -210,7 +214,7 @@
             </div>
         </div>
     </div>
-    <!-- --------------------------------------------------------------------------- about us end --------------------------------------------------------->
+    <!-- --------------------------------------------------------------------------- about project end --------------------------------------------------------->
 
     <!-- --------------------------------------------------------------------------- about model start ----------------------------------------------------------->
     <div class="about_model">
@@ -222,14 +226,45 @@
             </div>
             <div class="about_model_left col-lg-6 col-sm-12">
                 <div>
-                    <p>This model is , acc : 98% , network model : ResNet18
+                    <p style="line-height: 50px;">
+                        <b>mode : </b> This is a customized ResNet18 model.</br>
+                        <b>Training : </b> Trained on 375 images (with data augmentation) and 15% validation split with around 33.3% of total data on each class </br> 
+                        <b>Testing : </b> Tested on 90 image  </br>
+                        <b>Accuracy : </b> 98% </br>
+                        <b>Validation loss : </b> 0.6%  </br> 
                     </p>
-                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Documentation</button>
-                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Model</button>
+                    <a href="https://www.kaggle.com/dodger23/scene-classification">
+                        <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Raw model</button>
+                    </a>
+                    <a href="/model">
+                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Try model</button>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+    <!-- --------------------------------------------------------------------------- about model end --------------------------------------------------------->
+
+    <!-- --------------------------------------------------------------------------- about us start --------------------------------------------------------->
+
+    <div class="about_project about_us">
+        <h1>About Us</h1>
+        <div class="about_project_cont row">
+            <div class="about_project_left col-lg-6 col-sm-12">
+                <div>
+                    <p style="line-height: 50px;">
+                        This project was done by T7COMP team under the instructions and supervision of Eng. Ahmed ElBaz
+                    </p>
+                    <a href="/about_us"><button class="btn btn-primary">Know more</button></a>
+                </div>
+            </div>
+
+            <div class="about_project_right col-lg-6 col-sm-12">
+                <img src="../static/about_us.svg">
+            </div>
+        </div>
+    </div>
+    
     <!-- --------------------------------------------------------------------------- about us start --------------------------------------------------------->
 
 
