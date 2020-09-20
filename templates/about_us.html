@@ -5,25 +5,25 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
     <style>
         body {
-            display: flex;
-            flex-direction: column;
+            
             padding: 0px;
             margin: 0px;
-            background-color: #D4D4D4;
-            align-items: center;
-            box-sizing: border-box;
+            background-color: #eeeeee;
             width: 100%;
             font: inherit;
             font-size: 100%;
-            vertical-align: baseline;
         }
 
         .nav {
             background-color: #fff;
             width: 100%;
             padding: 20px;
+            position: fixed;
+            z-index: 1000;
             box-shadow: 0 0px 30px 0 rgba(0, 0, 0, .20), 0 0px 10px 0 rgba(0, 0, 0, .20);
         }
 
@@ -37,6 +37,48 @@
             box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .19), 0 12px 15px 0 rgba(0, 0, 0, .24);
         }
 
+        .instructor {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 100px;
+            background-color: #fff;
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .instructor_card {
+            
+            display: flex;
+            justify-content: center;
+        }
+
+        .instructor_text {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .team {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+        .certificates {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+        }
+
+        .cert img {
+            margin-top: 20px;
+        }
 
         .cont {
 
@@ -76,11 +118,116 @@
         <a class="nav-item nav-link" href="/user_manuals">User Manuals</a>
         <a class="nav-item nav-link active" href="/about_us">About Us</a>
     </nav>
-    <div>
-        <embed class=" cont" src="static/CERTS.pdf" width="1000px" height="1000px" />
+
+
+    <div class="instructor">
+        <p style="font-size: 50px;">Instructor</p>
+        <div class="section row">
+
+            <div class="instructor_card col-lg-6">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://www.kindpng.com/picc/m/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Eng. Ahmed ElBaz</h5>
+                        <a href="#" class="btn btn-primary">personal profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instructor_text col-lg-6">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias sapiente delectus praesentium facere
+                    cumque nesciunt mollitia odit, deleniti neque debitis soluta illum architecto dolores optio dicta
+                    molestias consectetur aspernatur ad!</p>
+            </div>
+
+        </div>
 
     </div>
 
+    <div style="padding: 100px;">
+        <p style="font-size: 50px; text-align: center;font-family: 'Poppins', sans-serif;">Team members</p>
+        <div class="team row ">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                    src="https://www.kindpng.com/picc/m/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Mohamed Ramadan</h5>
+                    <p style="color: #5a5a5a;">Team Leader</p>
+                    <a href="https://www.linkedin.com/in/mo7amed-ram/" class="btn btn-primary">LinkedIn profile</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                    src="https://www.kindpng.com/picc/m/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" style="margin-bottom: 23px;">Fatma El-Zahraa Ahmed</h5>
+                    <a href="#" class="btn btn-primary">LinkedIn profile</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                    src="https://www.kindpng.com/picc/m/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Tarek Hassan</h5>
+                    </br>
+                    </br>
+                    <a href="https://www.linkedin.com/in/tarek-a-hassan/" class="btn btn-primary">linkedIn profile</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                    src="https://www.kindpng.com/picc/m/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Mostafa Abd El-Kareem</h5>
+                    </br>
+                    </br>
+                    <a href="https://www.linkedin.com/in/mostafa-abdel-karim-94443a161/" class="btn btn-primary">LinkedIn profile</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                    src="https://www.kindpng.com/picc/m/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Mohammed Yasser</h5>
+                    </br>
+                    </br>
+                    <a href="https://www.linkedin.com/in/moharidy98" class="btn btn-primary">LinkedIn profile</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="certificates" style="padding: 100px;">
+        <p style="font-size: 50px;  text-align: center;">Certificates</p>
+        <div class="cert row">
+            <img src="../static//Certificates/ramadan1.png" class="col-md-3 col-sm-4 ">
+            <img src="../static//Certificates/ramadan2.jpeg" class=" col-md-3 col-sm-4 ">
+            <img src="../static//Certificates/fatma1.png" class=" col-md-3 col-sm-4 ">
+            <img src="../static//Certificates/fatma2.png" class=" col-md-3 col-sm-4 ">
+            <img src="../static//Certificates/tarek1.png" class=" col-md-3 col-sm-4 ">
+            <img src="../static//Certificates/tarek2.png" class=" col-md-3 col-sm-4 ">
+            <img src="../static//Certificates/kimo1.png" class=" col-md-3 col-sm-4 ">
+            <img src="../static//Certificates/kimo2.png" class=" col-md-3 col-sm-4 ">
+            <img src="../static//Certificates/yasser1.png" class=" col-md-3 col-sm-4 ">
+            <img src="../static//Certificates/yasser1.png" class=" col-md-3 col-sm-4 ">
+
+
+
+        </div>
+    </div>
 
     <footer class="footer">
         <p>@ 2020 Copyrights <span>T7COMP in <a href="https://egsa.gov.eg/">EgSA</a> training program</span> </p>

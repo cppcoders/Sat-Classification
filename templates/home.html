@@ -5,19 +5,49 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <style>
+        html,
         body {
-            display: flex;
-            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+
             padding: 0px;
             margin: 0px;
             background-color: #D4D4D4;
             align-items: center;
             box-sizing: border-box;
-            width: 100%;
             font: inherit;
             font-size: 100%;
             vertical-align: baseline;
+        }
+
+        .nav1 {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 20px;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .nav1 a {
+            color: #fff;
+        }
+
+        .nav1 a:hover{
+            color: rgb(230, 207, 0);
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        .show {
+            visibility: visible;
         }
 
         .nav {
@@ -29,26 +59,34 @@
             box-shadow: 0 0px 30px 0 rgba(0, 0, 0, .20), 0 0px 10px 0 rgba(0, 0, 0, .20);
         }
 
+        .sticky {
+            position: fixed;
+            top: 0;
+        }
+
         .header {
             color: #fff;
-            background: url('../static/cover.png');
+            background: url('../static/cover.jpg');
             background-size: cover;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
             text-align: center;
-            padding: 350px 100px 310px 100px;
-            margin-top: 74.4px;
-            background-color: #fff;
             width: 100%;
+            height: 100%;
             box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .19), 0 12px 15px 0 rgba(0, 0, 0, .24);
             z-index: 2;
         }
 
 
         .header_text {
+            font-family: 'Poppins', sans-serif;
             font-size: 50px;
             margin-bottom: 50px;
         }
 
         .about_project {
+            font-family: 'Poppins', sans-serif;
             background-color: #fff;
             width: 100%;
             padding-bottom: 100px;
@@ -56,6 +94,7 @@
         }
 
         .about_model {
+            font-family: 'Poppins', sans-serif;
             background-color: #f2f2f2;
             width: 100%;
         }
@@ -72,6 +111,9 @@
             justify-content: space-around;
             padding: 100px 100px 100px 100px;
             max-width: 100%;
+        }
+        .about_model_cont{
+            padding-top: 0px;
         }
 
         .about_project_left,
@@ -98,6 +140,10 @@
             width: 90%;
         }
 
+        .about_us{
+            width: 100% ; 
+            overflow: hidden;
+        }
         .main-section {
             text-align: center;
             margin: 0px auto;
@@ -126,7 +172,15 @@
 
 <body>
     <!-- --------------------------------------------------------------------------- header start ----------------------------------------------------------->
-    <nav class="nav nav-pills nav-justified">
+    <nav class="nav1" id="#nav1">
+        <a class="nav-item nav-link active" href="/">Home</a>
+        <a class="nav-item nav-link" href="/model">Model</a>
+        <a class="nav-item nav-link" href="/documentation">Documentation</a>
+        <a class="nav-item nav-link" href="/user_manuals">User Manuals</a>
+        <a class="nav-item nav-link" href="/about_us">About Us</a>
+    </nav>
+
+    <nav class="nav nav-pills nav-justified hidden" id="#nav2" >
         <a class="nav-item nav-link active" href="/">Home</a>
         <a class="nav-item nav-link" href="/model">Model</a>
         <a class="nav-item nav-link" href="/documentation">Documentation</a>
@@ -136,23 +190,25 @@
 
     <div class="header">
         <div class="header_text">
-            EgSA Training Program </br> Project
+            Satellite Image Classification </br> project
         </div>
-        <button class="btn btn-primary">Know more</button>
+        <a href="#about_project"><button class="btn btn-primary">Know more</button></a>
 
     </div>
 
     <!-- --------------------------------------------------------------------------- header end -------------------------------------------------------------->
 
-    <!-- --------------------------------------------------------------------------- about us start ----------------------------------------------------------->
-    <div class="about_project">
+    <!-- --------------------------------------------------------------------------- about project start ----------------------------------------------------------->
+    <div class="about_project" id="about_project">
         <h1>About Project</h1>
         <div class="about_project_cont row">
             <div class="about_project_left col-lg-6 col-sm-12">
                 <div>
-                    <p>This project is , the instructor : Eng . Ahmed El Baz
+                    <p style="line-height: 50px;">
+                        This project is an EgSA summer 2020 training program project, tha main goal was to build a deep learning model 
+                        that takes a satellite image and classify it to <b>desert, plant or water</b>. </br>
+                        To Know more please play the video
                     </p>
-                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Know more</button>
                 </div>
             </div>
 
@@ -163,7 +219,7 @@
             </div>
         </div>
     </div>
-    <!-- --------------------------------------------------------------------------- about us end --------------------------------------------------------->
+    <!-- --------------------------------------------------------------------------- about project end --------------------------------------------------------->
 
     <!-- --------------------------------------------------------------------------- about model start ----------------------------------------------------------->
     <div class="about_model">
@@ -175,14 +231,47 @@
             </div>
             <div class="about_model_left col-lg-6 col-sm-12">
                 <div>
-                    <p>This model is , acc : 98% , network model : ResNet18
+                    <p style="line-height: 50px;">
+                        <b>model : </b> This is a customized ResNet18 model.</br>
+                        <b>Training : </b> Trained on 375 images (with data augmentation) and 15% validation split with around 33.3% of total data on each class </br> 
+                        <b>Testing : </b> Tested on 90 image  </br>
+                        <b>Validation loss : </b> 0.3065 </br>
+                        <b>Validation accuracy : </b> 89%</br>
+                        <b>Test Accuracy : </b> 98% </br>
+                        
                     </p>
-                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Documentation</button>
-                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Model</button>
+                    <a href="https://www.kaggle.com/mohamed38/scene-classification/">
+                        <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Raw model</button>
+                    </a>
+                    <a href="/model">
+                    <button class="btn btn-primary col-lg-4 col-sm-12 col-md-4">Try model</button>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+    <!-- --------------------------------------------------------------------------- about model end --------------------------------------------------------->
+
+    <!-- --------------------------------------------------------------------------- about us start --------------------------------------------------------->
+
+    <div class="about_project about_us">
+        <h1>About Us</h1>
+        <div class="about_project_cont row">
+            <div class="about_project_left col-lg-6 col-sm-12">
+                <div>
+                    <p style="line-height: 50px;">
+                        This project was done by T7COMP team under the instructions and supervision of Eng. Ahmed ElBaz
+                    </p>
+                    <a href="/about_us"><button class="btn btn-primary">Know more</button></a>
+                </div>
+            </div>
+
+            <div class="about_project_right col-lg-6 col-sm-12">
+                <img src="../static/about_us.svg">
+            </div>
+        </div>
+    </div>
+    
     <!-- --------------------------------------------------------------------------- about us start --------------------------------------------------------->
 
 
@@ -192,6 +281,21 @@
     </footer>
 
     <script>
+
+        window.onscroll = function () {
+            navbar1 = document.getElementById("#nav1");
+            navbar2 = document.getElementById("#nav2");
+            if (window.pageYOffset > 20) {
+                navbar1.classList.add("hidden");
+                navbar2.classList.remove("hidden");
+            }
+            else if (window.pageYOffset == '0') {
+                navbar2.classList.add("hidden");
+                navbar1.classList.remove("hidden");
+            }
+        };
+
+
 
     </script>
 
