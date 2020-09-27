@@ -22,9 +22,13 @@ def index():
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-url = 'http://2e6063c8bfd6.ngrok.io/predict'
+url = 'http://5db6c444c5a9.ngrok.io/predict'
 @app.route('/predict', methods=['GET', 'POST'])
+@app.route("/model")
 def predict():
+    chk = requests.get(url).status_code
+    if chk == 404:
+        return render_template('model.html', message="404")
     files = request.files.getlist('uploadFile')
     pred = {}
     if len(files) > 10:
@@ -38,18 +42,15 @@ def predict():
         pim = base64.b64encode(buffered.getvalue())
         j = {"img": str(pim)}
         r = requests.post(url, json=json.dumps(j)).json()
+        print(r)
         res = r["pred"]
         res = res.split()
         res[1] = float(res[1])*100.0
-        if res[1] < 95 :
+        if res[1] < 95:
             res[0] = "What ?!!"
         pred[str(pim)[2:-1]] = res[0]
+
     return render_template('model.html', message=pred)
-
-
-@app.route("/model")
-def mod():
-    return render_template('model.html', message="model")
 
 
 @app.route("/documentation")

@@ -20,7 +20,7 @@
             vertical-align: baseline;
         }
 
-        .nav{
+        .nav {
             background-color: #fff;
             width: 100%;
             padding: 20px;
@@ -28,6 +28,7 @@
             z-index: 1000;
             box-shadow: 0 0px 30px 0 rgba(0, 0, 0, .20), 0 0px 10px 0 rgba(0, 0, 0, .20);
         }
+
         .main-section {
             text-align: center;
             margin: 0px auto;
@@ -60,11 +61,10 @@
             padding: 50px;
             color: #fff;
         }
-        
-        .footer p{
-            margin: 0px ; 
-        }
 
+        .footer p {
+            margin: 0px;
+        }
     </style>
 
 </head>
@@ -87,7 +87,7 @@
                 </br>
                 <form id="upload" action="/predict" method="POST" enctype="multipart/form-data">
                     <input type="file" name="uploadFile" accept="image/*" required multiple="multiple" />
-                    <button class="btn btn-primary" type="submit" value="Submit">Submit</button>
+                    <button class="btn btn-primary" type="submit" value="Submit" id='bbb'>Submit</button>
                 </form>
 
             </div>
@@ -148,7 +148,16 @@
             par.appendChild(c)
         }
         console.log(typeof '{{message}}')
-        if ( '{{ message}}' !== "model" ) {
+        if ('{{message}}' == '404') {
+            bbb = document.getElementById("bbb");
+            bbb.disabled = true;
+            bbb.innerHTML = "API is Offline, Please Ask The Developers to Run it"
+            bbb.classList.remove('btn-primary')
+            bbb.classList.add('btn-danger')
+
+
+        }
+        else if ('{{ message}}' !== "model") {
             var dat = JSON.parse('{{ message | tojson | safe}}')
             for (const [key, value] of Object.entries(dat)) {
                 fill(key, value)
